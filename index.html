@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tianpei (Luke) Xie</title>
+<meta name="description" content="Tianpei (Luke) Xie — Former Senior Applied Scientist at Amazon. PhD in EECS, University of Michigan. Machine learning, agentic AI, and ML systems.">
+<style>
+  :root {
+    --bg: #fdfdfb;
+    --text: #1a1a1a;
+    --muted: #5f6368;
+    --accent: #14532d;
+    --accent-soft: #eef4ef;
+    --rule: #e3e3dd;
+    --link: #14532d;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --text: #e8e6e3;
+      --muted: #9aa0a6;
+      --accent: #8fbf9f;
+      --accent-soft: #1d2622;
+      --rule: #2a2d33;
+      --link: #8fbf9f;
+      --card: #1a1d22;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Charter, Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    z-index: 10;
+  }
+  nav .inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0.6rem 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.4rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+  nav a { color: var(--muted); }
+  nav a:hover { color: var(--accent); text-decoration: none; }
+
+  main { max-width: 780px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+  header.hero {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 0 2rem;
+    flex-wrap: wrap;
+  }
+  .portrait {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border: 1px solid var(--rule);
+  }
+  .portrait-fallback {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: 1px solid var(--rule);
+  }
+  h1 {
+    margin: 0 0 0.25rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .tagline { margin: 0 0 0.75rem; color: var(--muted); font-size: 1.05rem; }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2.75rem 0 1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.01em;
+  }
+  h2 a.anchor { color: inherit; }
+  p { margin: 0 0 1rem; }
+
+  .interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .interests span {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+  }
+
+  .entry { margin-bottom: 1.4rem; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .entry-title { font-weight: 600; }
+  .entry-date {
+    color: var(--muted);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.82rem;
+    white-space: nowrap;
+  }
+  .entry-org { color: var(--muted); font-style: italic; }
+  .entry ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+  .entry li { margin-bottom: 0.3rem; }
+
+  .project {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .project .entry-head { margin-bottom: 0.3rem; }
+  .project .meta {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    display: flex;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+    margin-top: 0.6rem;
+  }
+  .project p { margin: 0; }
+
+  .pub { margin-bottom: 1.1rem; }
+  .pub .title { font-weight: 600; }
+  .pub .authors { color: var(--muted); }
+  .pub .authors .me { color: var(--text); font-weight: 600; }
+  .pub .venue { font-style: italic; }
+  .pub .badges {
+    display: inline-flex;
+    gap: 0.4rem;
+    margin-left: 0.2rem;
+    vertical-align: 1px;
+  }
+  .badge {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.7rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 4px;
+    padding: 0.08rem 0.45rem;
+  }
+
+  .edu-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.9rem;
+  }
+  .stats {
+    display: flex;
+    gap: 2.2rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 1.25rem;
+  }
+  .stat { text-align: left; }
+  .stat .num {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .stat .label {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    color: var(--muted);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+    <a href="#service">Service &amp; Honors</a>
+  </div>
+</nav>
+
+<main>
+
+<header class="hero" id="about">
+  <!-- To use a photo: add photo.jpg next to this file and replace the div below with:
+       <img class="portrait" src="photo.jpg" alt="Tianpei Xie"> -->
+  <div class="portrait-fallback" aria-hidden="true">TX</div>
+  <div>
+    <h1>Tianpei (Luke) Xie</h1>
+    <p class="tagline">Former Senior Applied Scientist, Amazon &middot; Ph.D. EECS, University of Michigan</p>
+    <div class="contact-links">
+      <a href="mailto:tianpei@umich.edu">tianpei@umich.edu</a>
+      <a href="https://github.com/TianpeiLuke" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=JugXDzsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/tianpeiluke" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://orcid.org/0000-0002-8437-6069" target="_blank" rel="noopener">ORCID</a>
+    </div>
+  </div>
+</header>
+
+<p>
+  I am a former Senior Applied Scientist at Amazon (2017&ndash;2026) with 15+ years in machine
+  learning and data science. I led the development of production ML models for abuse prevention and
+  served as tech lead and technical project owner for an abuse-prevention science team.
+</p>
+<p>
+  My recent focus is <strong>agentic AI systems</strong>: frameworks for LLM-driven ML pipelines,
+  knowledge management, and multi-agent orchestration
+  (<a href="#projects">selected projects</a>). I hold a Ph.D. in Electrical Engineering
+  &amp; Computer Science and an M.S. in Mathematics from the University of Michigan, with dual
+  graduate training in machine learning and statistics.
+</p>
+<div class="interests">
+  <span>Machine Learning</span>
+  <span>Agentic AI / LLM Systems</span>
+  <span>Deep Learning</span>
+  <span>NLP</span>
+  <span>Fraud &amp; Abuse Prevention</span>
+  <span>MLOps</span>
+  <span>Knowledge Engineering</span>
+</div>
+
+<h2 id="experience">Experience</h2>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Senior Applied Scientist</span>
+    <span class="entry-date">Jun 2022 &ndash; Sep 2026</span>
+  </div>
+  <div class="entry-org">Amazon &mdash; San Diego, CA</div>
+  <ul>
+    <li>Led design and development of ML-workflow automation and agentic-AI tooling for the science team.</li>
+    <li>Tech lead and technical project owner for an abuse-prevention science team &mdash; drove the technical roadmap and coordinated science, engineering, and product partners to deliver multi-quarter initiatives.</li>
+    <li>Led design and development of production ML models (tabular and NLP/deep learning) for abuse prevention.</li>
+    <li>Set the team&rsquo;s modeling and feature-engineering standards and served as technical reviewer for its scientific work; owned key business metrics for a major abuse-prevention area.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Applied Scientist II</span>
+    <span class="entry-date">Dec 2019 &ndash; Jun 2022</span>
+  </div>
+  <div class="entry-org">Amazon &mdash; San Diego, CA</div>
+  <ul>
+    <li>Built and deployed a multi-modal deep-learning model (NLP and tabular features) on AWS SageMaker for abuse detection.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <span class="entry-title">Applied Scientist</span>
+    <span class="entry-date">Sep 2017 &ndash; Dec 2019</span>
+  </div>
+  <div class="entry-org">Amazon &mdash; San Diego, CA</div>
+  <ul>
+    <li>Developed and deployed machine-learning models for transaction fraud and abuse detection.</li>
+  </ul>
+</div>
+
+<h2 id="projects">Selected Projects (Amazon)</h2>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Declarative ML Pipeline Framework</span>
+    <span class="entry-date">2025 &ndash; 2026</span>
+  </div>
+  <p>
+    A declarative MLOps framework that generates production ML pipelines on AWS SageMaker from
+    high-level specifications, with support for LLM-assisted pipeline authoring.
+  </p>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Knowledge-Graph &amp; Agent-Memory Engine</span>
+    <span class="entry-date">2026</span>
+  </div>
+  <p>
+    An LLM-based knowledge-management system with hybrid retrieval and automated quality
+    evaluation, exposed to AI agents as a memory layer.
+  </p>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Multi-Agent Orchestration Framework</span>
+    <span class="entry-date">2026</span>
+  </div>
+  <p>
+    A declarative multi-agent orchestration framework for reproducible, resumable LLM agent
+    workflows on AWS.
+  </p>
+</div>
+
+<h2 id="publications">Publications</h2>
+
+<p>
+  Publications at venues including AAAI, IEEE ICASSP, IEEE Transactions on Signal Processing,
+  and IEEE GlobalSIP.
+  See <a href="https://scholar.google.com/citations?user=JugXDzsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> for the full record.
+</p>
+
+<div class="pub">
+  <div class="title">MARS: Margin-Adversarial Risk-controlled Stopping for Parallel LLM Test-time Scaling</div>
+  <div class="authors">W. Chen, P. Li, M. Liu, W. Su, <span class="me">T. Xie</span></div>
+  <div class="venue">arXiv preprint arXiv:2606.12935, 2026</div>
+</div>
+
+<div class="pub">
+  <div class="title">CAAL: Contextual Bandits based Online Hand-Craft Active Learning Strategy Selection</div>
+  <div class="authors">S.-A. Yin, J. Li, <span class="me">T. Xie</span>, C. Levasseur, W. Kowalinski, N. Elia</div>
+  <div class="venue">New York Reinforcement Learning Workshop (NYRL) 2025; arXiv preprint arXiv:2606.07910, 2026</div>
+</div>
+
+<div class="pub">
+  <div class="title">Cross-Modal Memory Compression for Efficient Multi-Agent Debate</div>
+  <div class="authors">J. Wu, Y. Sun, <span class="me">T. Xie</span>, S. Chen, J. Bao, Y. Xu, G. Du, I. Heo, et&nbsp;al.</div>
+  <div class="venue">arXiv preprint arXiv:2602.00454, 2026</div>
+</div>
+
+<div class="pub">
+  <div class="title">SwitchTab: Switched Autoencoders Are Effective Tabular Learners
+    <span class="badges"><span class="badge">AAAI 2024</span></span></div>
+  <div class="authors">J. Wu, S. Chen, Q. Zhao, R. Sergazinov, C. Li, S. Liu, C. Zhao, <span class="me">T. Xie</span>, H. Guo, et&nbsp;al.</div>
+  <div class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 2024</div>
+</div>
+
+<div class="pub">
+  <div class="title">TabDeco: A Comprehensive Contrastive Framework for Decoupled Representations in Tabular Data</div>
+  <div class="authors">S. Chen, J. Wu, Y. Wang, C. Ji, <span class="me">T. Xie</span>, D. Cociorva, M. Sharps, C. Levasseur, H. Brunzell</div>
+  <div class="venue">NeurIPS 2024 Workshop on Table Representation Learning (TRL); arXiv preprint arXiv:2411.11148, 2024</div>
+</div>
+
+<div class="pub">
+  <div class="title">Learning to Classify with Possible Sensor Failures
+    <span class="badges"><span class="badge">IEEE TSP</span></span></div>
+  <div class="authors"><span class="me">T. Xie</span>, N. M. Nasrabadi, A. O. Hero</div>
+  <div class="venue">IEEE Transactions on Signal Processing, vol. 65, no. 4, pp. 836&ndash;849, 2017; arXiv preprint arXiv:1610.06806, 2016</div>
+</div>
+
+<div class="pub">
+  <div class="title">Semiblind Subgraph Reconstruction in Gaussian Graphical Models</div>
+  <div class="authors"><span class="me">T. Xie</span>, S. Liu, A. O. Hero</div>
+  <div class="venue">IEEE Global Conference on Signal and Information Processing (GlobalSIP), 2017</div>
+</div>
+
+<div class="pub">
+  <div class="title">Robust Learning from Multiple Information Sources
+    <span class="badges"><span class="badge">Ph.D. Thesis</span></span></div>
+  <div class="authors"><span class="me">T. Xie</span></div>
+  <div class="venue">University of Michigan, 2017</div>
+</div>
+
+<div class="pub">
+  <div class="title">Semi-Supervised Multi-Sensor Classification via Consensus-Based Multi-View Maximum Entropy Discrimination
+    <span class="badges"><span class="badge">ICASSP 2015 · Oral</span></span></div>
+  <div class="authors"><span class="me">T. Xie</span>, N. M. Nasrabadi, A. O. Hero</div>
+  <div class="venue">IEEE International Conference on Acoustics, Speech and Signal Processing, 2015</div>
+</div>
+
+<div class="pub">
+  <div class="title">Learning to Classify with Possible Sensor Failures
+    <span class="badges"><span class="badge">ICASSP 2014 · Oral</span></span></div>
+  <div class="authors"><span class="me">T. Xie</span>, N. M. Nasrabadi, A. O. Hero</div>
+  <div class="venue">IEEE International Conference on Acoustics, Speech and Signal Processing, 2014</div>
+</div>
+
+<h2 id="education">Education</h2>
+
+<div class="edu-row">
+  <div>
+    <div class="entry-title">Ph.D., Electrical Engineering and Computer Science</div>
+    <div class="entry-org">University of Michigan, Ann Arbor &mdash; Machine Learning &middot; GPA 4.0/4.0</div>
+  </div>
+  <span class="entry-date">2017</span>
+</div>
+
+<div class="edu-row">
+  <div>
+    <div class="entry-title">M.S., Mathematics</div>
+    <div class="entry-org">University of Michigan, Ann Arbor &middot; GPA 4.0/4.0</div>
+  </div>
+  <span class="entry-date">2016</span>
+</div>
+
+<div class="edu-row">
+  <div>
+    <div class="entry-title">M.S., Electrical Engineering and Computer Science</div>
+    <div class="entry-org">University of Michigan, Ann Arbor &mdash; Signal Processing &middot; GPA 4.0/4.0</div>
+  </div>
+  <span class="entry-date">2012</span>
+</div>
+
+<div class="edu-row">
+  <div>
+    <div class="entry-title">B.E., Automation</div>
+    <div class="entry-org">Tsinghua University, Beijing &mdash; Artificial Intelligence</div>
+  </div>
+  <span class="entry-date">2009</span>
+</div>
+
+<h2 id="service">Service &amp; Honors</h2>
+<ul>
+  <li><strong>Reviewer:</strong> NeurIPS, ICML, KDD, ICLR</li>
+  <li>Tau Beta Pi Honor Society</li>
+  <li>Insight AI Fellowship</li>
+  <li>Michigan Data Science Team</li>
+</ul>
+
+<footer>
+  &copy; 2026 Tianpei Xie &middot; Built with plain HTML &amp; CSS &middot; Hosted on GitHub Pages
+</footer>
+
+</main>
+</body>
+</html>
