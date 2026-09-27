@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tianpei (Luke) Xie</title>
-<meta name="description" content="Tianpei (Luke) Xie — Former Senior Applied Scientist at Amazon. PhD in EECS, University of Michigan. Machine learning, agentic AI, and ML systems.">
+<meta name="description" content="Tianpei (Luke) Xie — founder of a worldwide abuse-prevention program for Amazon’s third-party marketplace; NeurIPS, ICML, ICLR, KDD reviewer; Ph.D. EECS, Michigan.">
 <style>
   :root {
     --bg: #fdfdfb;
@@ -171,6 +171,15 @@
     margin-top: 0.6rem;
   }
   .project p { margin: 0; }
+  h3.group {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 1.6rem 0 0.8rem;
+  }
 
   .pub { margin-bottom: 1.1rem; }
   .pub .title { font-weight: 600; }
@@ -251,7 +260,8 @@
   <div class="portrait-fallback" aria-hidden="true">TX</div>
   <div>
     <h1>Tianpei (Luke) Xie</h1>
-    <p class="tagline">Former Senior Applied Scientist, Amazon &middot; Ph.D. EECS, University of Michigan</p>
+    <p class="tagline">Former Senior Applied Scientist, Amazon &middot; Ph.D. EECS, University of Michigan<br>
+      Founder of a worldwide abuse-prevention program for Amazon&rsquo;s third-party marketplace</p>
     <div class="contact-links">
       <a href="mailto:tianpei@umich.edu">tianpei@umich.edu</a>
       <a href="https://github.com/TianpeiLuke" target="_blank" rel="noopener">GitHub</a>
@@ -264,22 +274,27 @@
 
 <p>
   I am a former Senior Applied Scientist at Amazon (2017&ndash;2026) with 15+ years in machine
-  learning and data science. I led the development of production ML models for abuse prevention and
-  served as tech lead and technical project owner for an abuse-prevention science team.
+  learning and data science. In 2019 I founded a <strong>worldwide abuse-prevention program for
+  Amazon&rsquo;s third-party marketplace</strong> and led it until 2025. I also served as tech lead and
+  technical project owner for an abuse-prevention science team, leading development of its
+  production ML models.
 </p>
 <p>
   My recent focus is <strong>agentic AI systems</strong>: frameworks for LLM-driven ML pipelines,
   knowledge management, and multi-agent orchestration
   (<a href="#projects">selected projects</a>). I hold a Ph.D. in Electrical Engineering
   &amp; Computer Science and an M.S. in Mathematics from the University of Michigan, with dual
-  graduate training in machine learning and statistics.
+  graduate training in machine learning and statistics. I serve as a reviewer for NeurIPS, ICML,
+  ICLR, and KDD.
 </p>
 <div class="interests">
   <span>Machine Learning</span>
   <span>Agentic AI / LLM Systems</span>
   <span>Deep Learning</span>
   <span>NLP</span>
-  <span>Fraud &amp; Abuse Prevention</span>
+  <span>Marketplace Abuse &amp; Fraud Prevention</span>
+  <span>Tabular Representation Learning</span>
+  <span>Robust &amp; Multi-View Learning</span>
   <span>MLOps</span>
   <span>Knowledge Engineering</span>
 </div>
@@ -293,6 +308,7 @@
   </div>
   <div class="entry-org">Amazon &mdash; San Diego, CA</div>
   <ul>
+    <li>Led the worldwide third-party-marketplace abuse-prevention program (founded 2019) through 2025.</li>
     <li>Led design and development of ML-workflow automation and agentic-AI tooling for the science team.</li>
     <li>Tech lead and technical project owner for an abuse-prevention science team &mdash; drove the technical roadmap and coordinated science, engineering, and product partners to deliver multi-quarter initiatives.</li>
     <li>Led design and development of production ML models (tabular and NLP/deep learning) for abuse prevention.</li>
@@ -318,21 +334,93 @@
   </div>
   <div class="entry-org">Amazon &mdash; San Diego, CA</div>
   <ul>
+    <li>Founded a worldwide abuse-prevention program for Amazon&rsquo;s third-party marketplace (2019).</li>
     <li>Developed and deployed machine-learning models for transaction fraud and abuse detection.</li>
   </ul>
 </div>
 
-<h2 id="projects">Selected Projects (Amazon)</h2>
+<h2 id="projects">Selected Projects</h2>
+
+<h3 class="group">Research</h3>
 
 <div class="project">
   <div class="entry-head">
-    <span class="entry-title">Declarative ML Pipeline Framework</span>
+    <span class="entry-title">Risk-Controlled Stopping for Parallel LLM Test-Time Scaling</span>
     <span class="entry-date">2025 &ndash; 2026</span>
   </div>
   <p>
-    A declarative MLOps framework that generates production ML pipelines on AWS SageMaker from
-    high-level specifications, with support for LLM-assisted pipeline authoring.
+    A stopping rule for parallel test-time scaling of large language models that decides when
+    enough reasoning samples have been drawn, reducing inference compute under statistical risk
+    control.
   </p>
+  <div class="meta">
+    <span>Last author</span>
+    <a href="https://arxiv.org/abs/2606.12935" target="_blank" rel="noopener">arXiv 2026</a>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Memory Compression for Multi-Agent LLM Debate</span>
+    <span class="entry-date">2025 &ndash; 2026</span>
+  </div>
+  <p>
+    Cross-modal compression of the shared memory in multi-agent LLM debate, cutting context cost
+    while preserving debate quality.
+  </p>
+  <div class="meta">
+    <a href="https://arxiv.org/abs/2602.00454" target="_blank" rel="noopener">arXiv 2026</a>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Contextual-Bandit Selection of Active-Learning Strategies</span>
+    <span class="entry-date">2025</span>
+  </div>
+  <p>
+    An online method that uses contextual bandits to choose among hand-crafted active-learning
+    strategies as labeling proceeds.
+  </p>
+  <div class="meta">
+    <span>NYRL 2025</span>
+    <a href="https://arxiv.org/abs/2606.07910" target="_blank" rel="noopener">arXiv</a>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Self-Supervised Representation Learning for Tabular Data</span>
+    <span class="entry-date">2023 &ndash; 2024</span>
+  </div>
+  <p>
+    Switched-autoencoder and contrastive methods that decouple shared and sample-specific features
+    of tabular data, improving downstream prediction.
+  </p>
+  <div class="meta">
+    <a href="https://doi.org/10.1609/aaai.v38i14.29523" target="_blank" rel="noopener">SwitchTab (AAAI 2024)</a>
+    <a href="https://arxiv.org/abs/2411.11148" target="_blank" rel="noopener">TabDeco (NeurIPS 2024 TRL Workshop)</a>
+  </div>
+</div>
+
+<h3 class="group">Engineering at Amazon</h3>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Specification-Driven ML Pipeline Framework</span>
+    <span class="entry-date">2025 &ndash; 2026</span>
+  </div>
+  <p>
+    A specification-driven MLOps framework that removes most of the planning and design effort in
+    building AWS SageMaker pipelines. Users provide only two inputs: a DAG that defines the pipeline,
+    and a JSON configuration that sets each step container&rsquo;s inputs and environment variables.
+    The framework resolves dependencies between producer and consumer steps and connects them
+    through their declared step interfaces, which sharply reduced errors from inconsistencies
+    between steps. It also supports LLM-assisted pipeline authoring.
+  </p>
+  <div class="meta">
+    <span>Pipeline onboarding: 4 weeks &rarr; 2 days (&minus;90%)</span>
+  </div>
 </div>
 
 <div class="project">
@@ -341,9 +429,18 @@
     <span class="entry-date">2026</span>
   </div>
   <p>
-    An LLM-based knowledge-management system with hybrid retrieval and automated quality
-    evaluation, exposed to AI agents as a memory layer.
+    An LLM-powered knowledge-graph question-answering system (GraphRAG). An agentic AI pipeline
+    builds and maintains the knowledge graph automatically, extracting and linking knowledge into
+    atomic, connected units. The system serves the team through a Slack chatbot and gives AI agents
+    a shared memory layer, with an automated LLM-evaluation pipeline for answer accuracy,
+    hallucination detection, and knowledge-gap discovery. Used for new-hire onboarding,
+    cross-team collaboration, and knowledge transfer.
   </p>
+  <div class="meta">
+    <span>7,500+ questions in the first 3 months</span>
+    <span>~95% answer accuracy on in-coverage questions</span>
+    <span>Knowledge graph: 26K+ nodes, 300K+ edges</span>
+  </div>
 </div>
 
 <div class="project">
@@ -354,6 +451,85 @@
   <p>
     A declarative multi-agent orchestration framework for reproducible, resumable LLM agent
     workflows on AWS.
+  </p>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Multimodal Deep Learning for Abuse Detection</span>
+    <span class="entry-date">2020 &ndash; 2022</span>
+  </div>
+  <p>
+    A multimodal deep-learning model on AWS SageMaker that combines NLP and tabular features for
+    abuse detection.
+  </p>
+</div>
+
+<h3 class="group">Graduate Research &amp; Competitions</h3>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Collaborative Network Topology Inference</span>
+    <span class="entry-date">2017</span>
+  </div>
+  <p>
+    Recovering the structure of a network from partial observations, with Sijia Liu and
+    Alfred O. Hero.
+  </p>
+  <div class="meta">
+    <a href="https://arxiv.org/abs/1711.05391" target="_blank" rel="noopener">GlobalSIP 2017</a>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Multi-View Learning on Statistical Manifolds</span>
+    <span class="entry-date">2013 &ndash; 2014</span>
+  </div>
+  <p>
+    Consensus-based multi-view maximum-entropy discrimination for semi-supervised multi-sensor
+    classification, improving on the state of the art by 5%.
+  </p>
+  <div class="meta">
+    <a href="https://arxiv.org/abs/1507.01269" target="_blank" rel="noopener">ICASSP 2015 (oral)</a>
+    <a href="https://github.com/TianpeiLuke/Multi-view-learning-with-consensus-MED" target="_blank" rel="noopener">Code</a>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Robust Classification with Corrupted Training Data</span>
+    <span class="entry-date">2012 &ndash; 2013</span>
+  </div>
+  <p>
+    Learning classifiers that stay accurate when some training data come from failed or
+    unreliable sensors.
+  </p>
+  <div class="meta">
+    <a href="https://doi.org/10.1109/TSP.2016.2626263" target="_blank" rel="noopener">IEEE TSP 2017</a>
+    <span>ICASSP 2014 (oral)</span>
+  </div>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Drunk-Driver Prediction from Crash Records (FARS)</span>
+    <span class="entry-date">2016</span>
+  </div>
+  <p>
+    Predicting whether a drunk driver was involved in a car accident from the U.S. Fatality
+    Analysis Reporting System data. Ranked 4th in the competition, 13% above the state of the art.
+  </p>
+</div>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">Springleaf Marketing Response (Kaggle)</span>
+    <span class="entry-date">2015</span>
+  </div>
+  <p>
+    Predicting which customers respond to direct-mail loan offers. Top 10% of the public
+    leaderboard and 3rd in the University of Michigan competition.
   </p>
 </div>
 
@@ -387,7 +563,7 @@
   <div class="title">SwitchTab: Switched Autoencoders Are Effective Tabular Learners
     <span class="badges"><span class="badge">AAAI 2024</span></span></div>
   <div class="authors">J. Wu, S. Chen, Q. Zhao, R. Sergazinov, C. Li, S. Liu, C. Zhao, <span class="me">T. Xie</span>, H. Guo, et&nbsp;al.</div>
-  <div class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 2024</div>
+  <div class="venue">Proceedings of the AAAI Conference on Artificial Intelligence, 38(14), pp. 15924&ndash;15933, 2024</div>
 </div>
 
 <div class="pub">
@@ -466,7 +642,7 @@
 
 <h2 id="service">Service &amp; Honors</h2>
 <ul>
-  <li><strong>Reviewer:</strong> NeurIPS, ICML, KDD, ICLR</li>
+  <li><strong>Reviewer:</strong> NeurIPS, ICML, ICLR, KDD; formerly also Amazon&rsquo;s internal machine-learning conferences</li>
   <li>Tau Beta Pi Honor Society</li>
   <li>Insight AI Fellowship</li>
   <li>Michigan Data Science Team</li>
