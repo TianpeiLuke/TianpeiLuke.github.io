@@ -260,7 +260,7 @@
   <div class="portrait-fallback" aria-hidden="true">TX</div>
   <div>
     <h1>Tianpei (Luke) Xie</h1>
-    <p class="tagline">Former Senior Applied Scientist, Amazon &middot; Ph.D. EECS, University of Michigan<br>
+    <p class="tagline">Senior Applied Scientist, Amazon &middot; Ph.D. EECS, University of Michigan<br>
       Founder of a worldwide abuse-prevention program for Amazon&rsquo;s third-party marketplace</p>
     <div class="contact-links">
       <a href="mailto:tianpei@umich.edu">tianpei@umich.edu</a>
@@ -273,7 +273,7 @@
 </header>
 
 <p>
-  I am a former Senior Applied Scientist at Amazon (2017&ndash;2026) with 15+ years in machine
+  I am a Senior Applied Scientist at Amazon (since 2017) with 15+ years in machine
   learning and data science. In 2019 I founded a <strong>worldwide abuse-prevention program for
   Amazon&rsquo;s third-party marketplace</strong> and served as its tech lead until 2025. I also served as tech lead and
   technical project owner for an abuse-prevention science team, leading development of its
@@ -304,7 +304,7 @@
 <div class="entry">
   <div class="entry-head">
     <span class="entry-title">Senior Applied Scientist</span>
-    <span class="entry-date">Jun 2022 &ndash; Sep 2026</span>
+    <span class="entry-date">Jun 2022 &ndash; Present</span>
   </div>
   <div class="entry-org">Amazon &mdash; San Diego, CA</div>
   <ul>
@@ -312,7 +312,7 @@
     <li>Led design and development of ML-workflow automation and agentic-AI tooling for the science team.</li>
     <li>Tech lead and technical project owner for an abuse-prevention science team &mdash; drove the technical roadmap and coordinated science, engineering, and product partners to deliver multi-quarter initiatives.</li>
     <li>Led design and development of production ML models (tabular and NLP/deep learning) for abuse prevention.</li>
-    <li>Set the team&rsquo;s modeling and feature-engineering standards and served as technical reviewer for its scientific work; owned key business metrics for a major abuse-prevention area.</li>
+    <li>Set the team&rsquo;s modeling and feature-engineering standards and served as technical reviewer for its scientific work and as a reviewer for Amazon-internal ML conferences; owned key business metrics for a major abuse-prevention area.</li>
   </ul>
 </div>
 
@@ -403,23 +403,24 @@
   </div>
 </div>
 
-<h3 class="group">Engineering at Amazon</h3>
+<h3 class="group">Applied ML &amp; Agentic Systems</h3>
 
 <div class="project">
   <div class="entry-head">
-    <span class="entry-title">Specification-Driven ML Pipeline Framework</span>
+    <span class="entry-title">Specification-Driven ML Pipeline Framework (AWS SageMaker)</span>
     <span class="entry-date">May 2025 &ndash; Aug 2026</span>
   </div>
   <p>
-    A specification-driven MLOps framework that removes most of the planning and design effort in
-    building AWS SageMaker pipelines. Users provide only two inputs: a DAG that defines the pipeline,
-    and a JSON configuration that sets each step container&rsquo;s inputs and environment variables.
-    The framework resolves dependencies between producer and consumer steps and connects them
-    through their declared step interfaces, which sharply reduced errors from inconsistencies
-    between steps. It also supports LLM-assisted pipeline authoring.
+    A declarative MLOps framework, built on specification-driven design, that generates production
+    AWS SageMaker pipelines from just two inputs: a pipeline DAG, and a JSON configuration of each
+    step container&rsquo;s inputs and environment variables. Automatic dependency resolution
+    connects producer and consumer steps through their step interfaces, reducing errors from
+    cross-step inconsistencies. It also supports LLM-assisted pipeline authoring. By lowering the
+    planning and design effort for SageMaker pipelines, it cut pipeline onboarding from 4 weeks
+    (20 working days) to 2 days.
   </p>
   <div class="meta">
-    <span>Pipeline onboarding: 4 weeks &rarr; 2 days (&minus;90%)</span>
+    <span>Pipeline onboarding: 4 weeks &rarr; 2 days (&minus;90%, 10&times; faster)</span>
   </div>
 </div>
 
@@ -429,41 +430,42 @@
     <span class="entry-date">Jan 2026 &ndash; Sep 2026</span>
   </div>
   <p>
-    An LLM-powered knowledge-graph question-answering system built on a new GraphRAG-like
-    retrieval technique. An agentic AI pipeline
-    builds and maintains the knowledge graph automatically, extracting and linking knowledge into
-    atomic, connected units. The system serves the team through a Slack chatbot and gives AI agents
-    a shared memory layer, with an automated LLM-evaluation pipeline for answer accuracy,
-    hallucination detection, and knowledge-gap discovery. Used for new-hire onboarding,
-    cross-team collaboration, and knowledge transfer.
+    An LLM-based knowledge engine over a knowledge graph of 26,000+ notes and 300,000+ links, built
+    by an agentic system that follows Zettelkasten principles (atomic, densely linked notes), and
+    exposed to AI agents as a memory layer. A new GraphRAG-like retrieval technique uses the
+    graph&rsquo;s small-world structure with a lightweight stack: chunk-free embedding retrieval plus
+    breadth-first graph traversal with priority-based reranking. A Slack integration connects the
+    knowledge base to the team, easing new-hire onboarding, cross-team collaboration, and knowledge
+    transfer. Automated LLM evaluation identifies knowledge gaps and detects hallucinations.
   </p>
   <div class="meta">
     <span>7,500+ questions in the first 3 months</span>
-    <span>~95% answer accuracy on in-coverage questions</span>
-    <span>Knowledge graph: 26K+ nodes, 300K+ edges</span>
+    <span>~95% average answer accuracy on in-coverage questions</span>
+    <span>Knowledge graph: 26K+ notes, 300K+ links</span>
   </div>
 </div>
 
 <div class="project">
   <div class="entry-head">
-    <span class="entry-title">One-Person Buyer Abuse Prevention</span>
+    <span class="entry-title">One-Person Buyer Abuse Prevention (Agentic AI)</span>
     <span class="entry-date">May 2026 &ndash; Sep 2026</span>
   </div>
   <p>
     An agentic system that borrows the &ldquo;one-person company&rdquo; idea (one person directing a
-    team of AI agents) for buyer abuse prevention. Its harness is a declarative multi-agent
-    orchestration framework for reproducible, resumable LLM agent workflows on AWS, with specialized
-    memory management and planning. Dialectic knowledge validation has agents traverse separate
-    knowledge-graph trails for evidence: converging trails skip debate, while conflicting trails
-    trigger a multi-agent debate grounded in each trail&rsquo;s evidence and common logical
-    principles. I led a 3-person team through two major launches: ticket automation, and ML
-    operational excellence, which stood up a new model, a human-in-the-loop policy, system
-    monitors, and periodic model retraining.
+    team of AI agents) for buyer abuse prevention. I architected its agentic harness, with
+    specialized memory management and planning, as a declarative multi-agent orchestration
+    framework for reproducible, resumable LLM agent workflows on AWS. Dialectic knowledge
+    validation has agents traverse separate knowledge-graph trails for ground-truth evidence:
+    converging trails skip debate, while conflicting trails trigger a multi-agent debate grounded
+    in each trail&rsquo;s context map and common logical principles. I led a 3-person team through
+    two major launches: ticket automation (75% of tickets automated in phase 1, with a goal of
+    100%), and ML operational excellence, a new program stood up end to end with a new model, a
+    human-in-the-loop policy implemented via new runtime variables, system monitors, and a periodic model-retraining pipeline.
   </p>
   <div class="meta">
     <span>Team lead (3 people)</span>
     <span>2 major launches</span>
-    <span>75% of tickets automated in phase 1</span>
+    <span>75% of tickets automated in phase 1 (goal: 100%)</span>
   </div>
 </div>
 
@@ -655,7 +657,7 @@
 
 <h2 id="service">Service &amp; Honors</h2>
 <ul>
-  <li><strong>Reviewer:</strong> NeurIPS, ICML, ICLR, KDD; formerly also Amazon&rsquo;s internal machine-learning conferences</li>
+  <li><strong>Reviewer:</strong> NeurIPS, ICML, ICLR, KDD, and Amazon&rsquo;s internal machine-learning conferences</li>
   <li>Tau Beta Pi Honor Society</li>
   <li>Insight AI Fellowship</li>
   <li>Michigan Data Science Team</li>
