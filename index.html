@@ -313,6 +313,7 @@
     <li>Tech lead and technical project owner for an abuse-prevention science team &mdash; drove the technical roadmap and coordinated science, engineering, and product partners to deliver multi-quarter initiatives.</li>
     <li>Led design and development of production ML models (tabular and NLP/deep learning) for abuse prevention.</li>
     <li>Set the team&rsquo;s modeling and feature-engineering standards and served as technical reviewer for its scientific work and as a reviewer for Amazon-internal ML conferences; owned key business metrics for a major abuse-prevention area.</li>
+    <li>Mentored 5 junior scientists and led 3 interns; named Best Day 1 Science Mentor (D1SM) in 2024 and 2025.</li>
   </ul>
 </div>
 
@@ -404,6 +405,28 @@
 </div>
 
 <h3 class="group">Applied ML &amp; Agentic Systems</h3>
+
+<div class="project">
+  <div class="entry-head">
+    <span class="entry-title">AI Abuse Investigator: Small Language Model Post-Training</span>
+    <span class="entry-date">May 2025 &ndash; Aug 2026</span>
+  </div>
+  <p>
+    Post-trained Qwen3-8B to decide buyer-abuse cases by following standard operating procedures
+    (SOPs). In production since October 2025 as the reasoning stage behind a BERT router, deciding
+    each case in under 10 seconds. I curated 30K training examples from 1M noisy investigation
+    records: leakage-aware deduplication over an account graph, multi-modal BERT and LLM-judge
+    quality scoring, excess-loss selection of learnable examples, and segment-balanced sampling.
+    A Qwen3-32B teacher, fine-tuned with LoRA on auditor-graded cases, was distilled into the 8B
+    model through full SFT and on-policy distillation (H100, vLLM), followed by robustness training
+    on perturbed retrieval context.
+  </p>
+  <div class="meta">
+    <span>Recall at 1% FPR: 75% &rarr; 93.5% (74% fewer missed abuse cases)</span>
+    <span>Additional $5M saved per quarter since Q1 2026</span>
+    <span>Qwen3-32B teacher &rarr; Qwen3-8B student</span>
+  </div>
+</div>
 
 <div class="project">
   <div class="entry-head">
